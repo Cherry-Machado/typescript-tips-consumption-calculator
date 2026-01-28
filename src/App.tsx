@@ -2,7 +2,9 @@ function App() {
   
   return (
     <>
-      <h1 className="text-8xl font-extrabold text-indigo-700">Hola Mundo</h1>
+      <header className="bg-teal-400 py-5">
+        <h1 className="text-center text-4xl font-black">Tips and Consumption Calculator</h1>
+      </header>
     </>
   )
 }
