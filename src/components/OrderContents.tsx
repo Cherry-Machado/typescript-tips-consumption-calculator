@@ -1,9 +1,9 @@
 import { formatCurrency } from "../helpers"
-import type { OrderItem } from "../types"
+import type { MenuItem, OrderItem } from "../types"
 
 type OrderContentsProps = {
     order: OrderItem[],
-    removeItem: () => void
+    removeItem: (id: MenuItem['id']) => void
 }
 
 export default function OrderContents({ order, removeItem }: OrderContentsProps) {
@@ -29,7 +29,7 @@ export default function OrderContents({ order, removeItem }: OrderContentsProps)
                            </p>
                         </div>
                         <button className="bg-red-600 h-8 w-8 rounded-full text-white font-black"
-                            onClick={() => removeItem()}
+                            onClick={() => removeItem(item.id)}
                         >
                             X
                         </button>

@@ -22,9 +22,9 @@ export default function useOrder() {
         }
     };
 
-    const removeItem = () => {
+    const removeItem = (id: MenuItem["id"]) => {
         // Implementation for removing an item from the order
-        console.log("Remove item function called");
+        setOrder(order.filter(item => item.id !== id));
     };
     
     return {
