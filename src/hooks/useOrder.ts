@@ -22,9 +22,14 @@ export default function useOrder() {
         }
     };
 
-
+    const removeItem = () => {
+        // Implementation for removing an item from the order
+        console.log("Remove item function called");
+    };
+    
     return {
         order,
-        addItem
+        addItem,
+        removeItem
     }
 }
