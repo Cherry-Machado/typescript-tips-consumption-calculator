@@ -27,12 +27,20 @@ export default function useOrder() {
         // Implementation for removing an item from the order
         setOrder(order.filter(item => item.id !== id));
     };
+
+    const placeOrder = () => {
+        // Implementation for placing the order
+        alert("Order placed!");
+        setOrder([]); // Clear order after placing
+        setTip(0);    // Reset tip after placing order
+    };
     
     return {
         order,
         tip,
         setTip,
         addItem,
-        removeItem
-    }
+        removeItem,
+        placeOrder    
+    };
 }
