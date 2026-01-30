@@ -8,6 +8,7 @@ import useOrder from "./hooks/useOrder";
 
 function App() {
 
+  // Custom hook to manage order state
   const { order, tip, setTip, addItem, removeItem, placeOrder } = useOrder();
   
   return (
@@ -21,6 +22,7 @@ function App() {
           <h2 className="text-4xl font-black">Menu</h2>
 
           <div className="space-y-3 mt-10" >
+            {/* Render menu items */}
             {menuItems.map(item => (
               <MenuItem 
                 key={item.id}
@@ -33,6 +35,7 @@ function App() {
 
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
 
+          {/* Render order contents, tip form, and totals */}
           <OrderContents 
             order={order}
             removeItem={removeItem}

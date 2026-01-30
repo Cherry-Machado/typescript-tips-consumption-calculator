@@ -11,8 +11,13 @@ type OrderTotalsProps = {
 export default function OrderTotals( { order, tip, placeOrder }: OrderTotalsProps ) {
 
     // Calculate subtotal using useMemo for performance optimization
+    // This recalculates only when 'order' changes
     const subtotalAmount = useMemo(() => order.reduce( (total, item) => total + (item.quantity * item.price), 0), [order]);
+
+    // Calculate tip amount based on subtotal and selected tip percentage
     const tipAmount = useMemo(() => subtotalAmount * tip, [tip, order]);
+
+    // Calculate total amount (subtotal + tip)
     const totalAmount = useMemo(() => subtotalAmount + tipAmount, [tip, order]);
 
 
@@ -36,6 +41,7 @@ export default function OrderTotals( { order, tip, placeOrder }: OrderTotalsProp
         <button
             className="w-full bg-black p-3 uppercase text-white font-bold mt-10 disabled:opacity-10"
             disabled={totalAmount === 0}
+            // Disable button if there is no total
             onClick={placeOrder}      
         >
             Complete Order

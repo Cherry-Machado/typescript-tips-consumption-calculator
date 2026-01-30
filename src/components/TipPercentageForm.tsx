@@ -1,5 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 
+ // Define available tip options
 const tipOptions = [
   {
     id: 'tip-10',
@@ -30,6 +31,7 @@ export default function TipPercentageForm({ setTip, tip } : TipPercentageFormPro
         <h3 className="font-black text-2xl">Tip Percentage:</h3>
 
         <form>
+            {/* Map through tipOptions to create radio buttons */}
             {tipOptions.map( tipOption => (
                 <div key={tipOption.id} className="flex gap-2">
                     <label htmlFor={tipOption.id}>{tipOption.label}</label>
@@ -38,7 +40,9 @@ export default function TipPercentageForm({ setTip, tip } : TipPercentageFormPro
                         type="radio"
                         name="tip"
                         value={tipOption.value}
+                        // Update tip state when a radio button is selected
                         onChange={ e => setTip(parseFloat(e.target.value))}
+                        // Check the radio button if it matches the current tip state
                         checked={ tipOption.value === tip }
                     />
                 </div>
