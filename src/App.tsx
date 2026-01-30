@@ -8,7 +8,7 @@ import useOrder from "./hooks/useOrder";
 
 function App() {
 
-  // Custom hook to manage order state
+  // Extracting order management functions and state from custom hook
   const { order, tip, setTip, addItem, removeItem, placeOrder } = useOrder();
   
   return (

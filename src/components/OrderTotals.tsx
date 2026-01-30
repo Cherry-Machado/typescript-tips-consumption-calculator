@@ -8,6 +8,8 @@ type OrderTotalsProps = {
   tip: number,
   placeOrder: () => void}
 
+// Component to display order totals and complete order button
+
 export default function OrderTotals( { order, tip, placeOrder }: OrderTotalsProps ) {
 
     // Calculate subtotal using useMemo for performance optimization

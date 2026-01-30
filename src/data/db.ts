@@ -1,5 +1,7 @@
 import type { MenuItem } from "../types"
 
+// Iam using an array of objects to represent each menu item
+
 export const menuItems: MenuItem[] = [
   {
     "id": 1,
@@ -43,7 +45,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     "id": 9,
-    "name": "Tequila",
+    "name": "Coke Drink",
     "price": 40
   },
   {

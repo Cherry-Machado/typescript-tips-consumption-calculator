@@ -6,6 +6,8 @@ type OrderContentsProps = {
     removeItem: (id: MenuItem['id']) => void
 }
 
+// Component to display the order contents
+
 export default function OrderContents({ order, removeItem }: OrderContentsProps) {
   return (
     <div>

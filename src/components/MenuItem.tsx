@@ -5,6 +5,7 @@ type MenuItemProps = {
   addItem: (item: MenuItem) => void
 }
 
+// Component to display a single menu item
 
 export default function MenuItem({ item, addItem }: MenuItemProps) {
   return (

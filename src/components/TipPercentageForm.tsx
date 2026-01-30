@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 
  // Define available tip options
+ // Iam using an array of objects to represent each tip option
 const tipOptions = [
   {
     id: 'tip-10',
@@ -24,6 +25,7 @@ type TipPercentageFormProps = {
   tip: number
 }
 
+// Component to select tip percentage
 
 export default function TipPercentageForm({ setTip, tip } : TipPercentageFormProps) {
   return (
