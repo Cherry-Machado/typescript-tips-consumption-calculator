@@ -4,13 +4,17 @@ import { useMemo } from "react";
 
 
 type OrderTotalsProps = {
-  order: OrderItem[]
+  order: OrderItem[],
+  tip: number
 }
 
-export default function OrderTotals( { order }: OrderTotalsProps ) {
+export default function OrderTotals( { order, tip }: OrderTotalsProps ) {
 
     // Calculate subtotal using useMemo for performance optimization
     const subtotalAmount = useMemo(() => order.reduce( (total, item) => total + (item.quantity * item.price), 0), [order]);
+    const tipAmount = useMemo(() => subtotalAmount * tip, [tip, order]);
+    const totalAmount = useMemo(() => subtotalAmount + tipAmount, [tip, order]);
+
 
   return (
     <>
@@ -21,13 +25,11 @@ export default function OrderTotals( { order }: OrderTotalsProps ) {
             </p>
 
             <p>Suggested Tip Amounts: {''}
-                <span className="font-bold">10%: $0</span>
-                <span className="font-bold">15%: $0</span>
-                <span className="font-bold">20%: $0</span>
+                <span className="font-bold">{formatCurrency(tipAmount)}</span>
             </p>
 
             <p>Total with Tip: {''}
-                <span className="font-bold">$0</span>
+                <span className="font-bold">{formatCurrency(totalAmount)}</span>
             </p>
         </div>
 
