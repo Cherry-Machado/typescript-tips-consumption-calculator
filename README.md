@@ -6,7 +6,7 @@ This is a Tip and Consumption Calculator program coded in TypeScript, React as a
 
 The program was created to demonstrate my skills in Typescript. I create a Form and used the array structure to build the program. 
 
-[Calculator Application Deployment](https://github.com/Cherry-Machado)
+[Calculator Application Deployment](https://typescript-tipsconsumption-calculator.netlify.app/)
 
 [Calculator Application Demo Video](https://github.com/Cherry-Machado)
 
