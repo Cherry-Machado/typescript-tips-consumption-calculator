@@ -33,7 +33,10 @@ export default function OrderTotals( { order, tip }: OrderTotalsProps ) {
             </p>
         </div>
 
-        <button>
+        <button
+            className="w-full bg-black p-3 uppercase text-white font-bold mt-10 disabled:opacity-10"
+            disabled={totalAmount === 0}    
+        >
             Complete Order
         </button>
     </>
