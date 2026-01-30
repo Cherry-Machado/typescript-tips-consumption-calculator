@@ -35,21 +35,29 @@ function App() {
 
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
 
-          {/* Render order contents, tip form, and totals */}
-          <OrderContents 
-            order={order}
-            removeItem={removeItem}
-          />
-          <TipPercentageForm 
-            setTip={setTip}
-            tip={tip}
-          />
+          {/* Conditional rendering based on whether there are items in the order */}
+          {order.length > 0 ? (
+            <>
+              {/* Render order contents, tip form, and totals */}
+              <OrderContents 
+                order={order}
+                removeItem={removeItem}
+              />
+              <TipPercentageForm 
+                setTip={setTip}
+                tip={tip}
+              />
 
-          <OrderTotals 
-            order={order}
-            tip={tip}
-            placeOrder={placeOrder} 
-          />
+              <OrderTotals 
+                order={order}
+                tip={tip}
+                placeOrder={placeOrder} 
+              />
+            </>
+          ) : (
+            <p className="text-center text-slate-400">No items in order</p>
+          )}
+          
 
         </div>
       </main>
