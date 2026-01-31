@@ -8,7 +8,7 @@ The program was created to demonstrate my skills in Typescript. I create a Form 
 
 [Calculator Application Deployment](https://typescript-tipsconsumption-calculator.netlify.app/)
 
-[Calculator Application Demo Video](https://github.com/Cherry-Machado)
+[Calculator Application Demo Video](https://www.youtube.com/watch?v=f12DvuzYskc)
 
 # Development Environment
 
